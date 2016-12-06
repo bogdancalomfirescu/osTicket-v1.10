@@ -34,13 +34,16 @@ class UsersAjaxAPI extends AjaxController {
             return $this->json_encode($matches);
 
         $q = $_REQUEST['q'];
-        $limit = isset($_REQUEST['limit']) ? (int) $_REQUEST['limit']:25;
+        /* Set the limit to list all users on mobile */
+        //$limit = isset($_REQUEST['limit']) ? (int) $_REQUEST['limit']:25;
+        $limit = 1000;
         $users=array();
         $emails=array();
         $matches = array();
-
-        if (strlen($q) < 3)
-            return $this->encode(array());
+        
+        /* Commented to list users on the mobile app */
+        //if (strlen($q) < 3)
+        //    return $this->encode(array());
 
         if (!$type || !strcasecmp($type, 'remote')) {
             foreach (AuthenticationBackend::searchUsers($q) as $u) {
