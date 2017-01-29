@@ -30,8 +30,8 @@ class UsersAjaxAPI extends AjaxController {
         }
 
         $matches = array();
-        if (!$_REQUEST['q'])
-            return $this->json_encode($matches);
+        //if (!$_REQUEST['q']) /* Commented to list users on the mobile app */
+        //    return $this->json_encode($matches); /* Commented to list users on the mobile app */
 
         $q = $_REQUEST['q'];
         /* Set the limit to list all users on mobile */
@@ -40,10 +40,9 @@ class UsersAjaxAPI extends AjaxController {
         $users=array();
         $emails=array();
         $matches = array();
-        
-        /* Commented to list users on the mobile app */
-        //if (strlen($q) < 3)
-        //    return $this->encode(array());
+                
+        //if (strlen($q) < 3) /* Commented to list users on the mobile app */
+        //    return $this->encode(array()); /* Commented to list users on the mobile app */
 
         if (!$type || !strcasecmp($type, 'remote')) {
             foreach (AuthenticationBackend::searchUsers($q) as $u) {
