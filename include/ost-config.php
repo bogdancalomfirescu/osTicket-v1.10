@@ -33,16 +33,16 @@ if(OSTINSTALLED!=TRUE){
 define('SECRET_SALT','P0HoSNg5SaXzkv_wfX8wQol3PBnNzs9C');
 
 #Default admin email. Used only on db connection issues and related alerts.
-define('ADMIN_EMAIL','pimenta@red4sis.com');
+define('ADMIN_EMAIL','bogdan.calomfirescu@yahoo.com');
 
 # Database Options
 # ---------------------------------------------------
 # Mysql Login info
 define('DBTYPE','mysql');
-define('DBHOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-define('DBNAME', 'osTicket');
-define('DBUSER', getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-define('DBPASS', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+define('DBHOST', getenv('MYSQL_SERVICE'));
+define('DBNAME', getenv('MYSQL_DATABASE'));
+define('DBUSER', getenv('MYSQL_USER'));
+define('DBPASS', getenv('MYSQL_PASSWORD'));
 
 # Table prefix
 define('TABLE_PREFIX','ost_');
